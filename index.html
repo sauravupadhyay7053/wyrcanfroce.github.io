@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.1/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Typography */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            padding-right: 20px;
+            position: fixed;
+            display: flex;
+            height: 62px;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 20px;
+            background-color: #1d4b62;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .logo {
+            display: flex font-size: 24px;
+            font-weight: 600;
+            margin: 10px;
+        }
+
+        nav {
+            display: flex;
+            /* position: sticky; */
+            gap: 20px;
+            align-items: center;
+            display:
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #003366;
+        }
+
+        /* Main content styling */
+        .main-content {
+
+
+
+
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            padding-top: 40px;
+            /* max-width: 1200px; */
+            height: 500px;
+            max-width: fit-content;
+            margin: 0 auto;
+            background-image: url('img/21.jpg');
+            /* Replace 'your-image.jpg' with the path to your background image */
+            background-size: cover;
+            /* Scale the image to cover the entire .main-content area */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Prevent image repetition */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: -1;
+            /* opacity: 0.8; */
+        }
+
+        .main-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .main-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Slides */
+        .mySlides {
+            display: none;
+            text-align: center;
+            /* padding: 42px; */
+            color: white;
+            font-weight: bold;
+            font-family: cursive;
+            text-shadow: 0.5px 0.51px 0px rgb(37, 45, 131)146)146)226);
+            box-decoration-break: slice;
+
+            animation: changeColor 5s infinite;
+
+
+
+        }
+
+        /* Slideshow caption */
+        .caption {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Keyframes for Slideshow Animation */
+        @keyframes slideAnimation {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            25%,
+            75% {
+                opacity: 1;
+            }
+        }
+
+        /* Keyframes for Changing Color Animation */
+        @keyframes changeColor {
+            0% {
+                background-color: #f1c40f;
+                /* Bright glittery color 1 */
+            }
+
+            20% {
+                background-color: #e74c3c;
+                /* Bright glittery color 2 */
+            }
+
+            40% {
+                background-color: #3498db;
+                /* Bright glittery color 3 */
+            }
+
+            60% {
+                background-color: #2ecc71;
+                /* Bright glittery color 4 */
+            }
+
+            80% {
+                background-color: #9b59b6;
+                /* Bright glittery color 5 */
+            }
+
+            100% {
+                background-color: #f1c40f;
+                /* Back to color 1 */
+            }
+        }
+
+
+        /* Callback Form Styling */
+        .callback-form {
+            left: 588px;
+            position: absolute;
+            top: 235px;
+            /* bottom: 39px; */
+            right: 0px;
+            transform: translateY(-40%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgb(65 217 199 / 67%);
+        }
+
+        .callback-form input[type="text"],
+        .callback-form input[type="email"],
+        .callback-form input[type="tel"],
+        .callback-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .callback-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .callback-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Footer styling */
+        footer {
+            padding: 40px 20px;
+            background-color: #001F3F;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        footer a {
+            color: #66B2FF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .main-text h1 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-wrap: wrap;
+            flex-wrap: wrap;
+            text: font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-style: italic;
+        }
+
+        .circular-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* Makes it circular */
+            object-fit: cover;
+            /* Ensures the image fits the circle without distortion */
+            margin: 10px;
+            /* Adjust margin as needed for positioning */
+        }
+
+
+
+        .small-logo {
+            width: 80px;
+            /* Adjust the width as needed */
+            height: auto;
+            /* Maintains the aspect ratio */
+            margin: 10px;
+            /* Adjust margin as needed for positioning */
+        }
+
+        /* Custom styles for the flashing headlines */
+        #headline {
+            font-size: 32px;
+            font-weight: 600;
+            color: rgb(44, 20, 102);
+            text-align: center;
+            flex-wrap: wrap;
+            animation: flashHeadlines 5s infinite alternate;
+            /* Alternates between showing and hiding the text */
+        }
+
+
+        .contact-container {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        /* Keyframes for Flashing Headlines Animation */
+        @keyframes flashHeadlines {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- <img src="wf1.png" alt="Circular Logo" class="circular-logo"> -->
+        <img src="wf1.png" alt="Logo" class="small-logo">
+        <!-- <div class="logo">WyrcanForce</div> -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Service</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div id="home">
+            <div class="main-text">
+                <!-- <h1>Why to hunt for JOBs</h1> -->
+                <h1 id="headline"></h1>
+                <!-- Slideshow Container -->
+                <div class="slideshow-container">
+                    <!-- Slide 1 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> Wyrcanforce is launching a versatile workstation platform that connects
+                            skilled
+                            individuals with industry work online within 15 minutes. Compensation is based on completed
+                            tasks, submodules, or modules, offered on a daily, weekly, or monthly basis.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> Wyrcanforce offers a hassle-free work environment where individuals have
+                            the
+                            opportunity to continuously increase their earnings based on their dedication and time spent
+                            on
+                            the platform.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> Wyrcanforce offers weekly skill competitions with rewards and improved
+                            ratings,
+                            leading to direct hiring opportunities with top companies for high-rated participants.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> Wyrcanforce substantially reduces company hiring costs, confident in
+                            achieving
+                            at least a 50% reduction, simplifying the hiring and work management processes.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> We offer a testing facility for each module completed on our platform,
+                            ensuring
+                            the seamless maintenance and execution of work for companies.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> We directly hire laid-off individuals by offering them favorable ratings on
+                            our
+                            platform, granting them lifelong access to our services without the need for a subscription.
+                        </p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> We provide an on-demand workforce solution, catering to both immediate and
+                            urgent staffing needs for companies.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> We tackle the major hurdle of time-consuming hiring, eliminating the need
+                            for
+                            extensive interviews, salary considerations, and comprehensive benefits from recruitment to
+                            retirement planning.</p>
+                        <div class="caption"></div>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="mySlides" style="animation: changeColor 10s infinite;">
+                        <p><strong></strong> You have the option to directly hire our top-rated platform users, who gain
+                            expertise across various tech stacks and exposure to a wide range of companies while working
+                            with us.</p>
+                        <div class="caption"></div>
+                    </div>
+                </div>
+                <!-- End of Slideshow Container -->
+            </div>
+            <div class="main-image">
+                <!-- <img src="wf1.png" alt="Description of Image"> -->
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ABout US section -->
+
+
+
+    <section class="bg-gradient-to-r from-teal-500 to-teal-300 py-16 md:py-24">
+        <style>
+            /* Define custom CSS classes for background colors */
+            .mission-bg {
+                background-color: #FAD02E;
+                /* Yellow */
+            }
+
+            .values-bg {
+                background-color: #FF6B6B;
+                /* Red */
+            }
+        </style>
+
+
+        <div id="about" class="container mx-auto px-4 flex flex-wrap items-center">
+            <div class="md:w-1/2 lg:w-1/3 mb-8 md:mb-0">
+                <img class="rounded-lg shadow-lg w-full h-auto object-cover" src="wf1.png" alt="Company Logo">
+            </div>
+            <div class="md:w-1/2 lg:w-2/3 md:pl-10">
+                <!-- <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white">About Us</h2> -->
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-teal-500">About Us
+                </h2>
+
+                <p class="text-gray-800 text-lg mb-8">
+                    Wyrcanforce is a platform that aims to revolutionize outsourcing in the technology industry.
+                    We
+                    provide students, undergraduates, graduates, and postgraduates with industry exposure. We
+                    believe
+                    there should be no barriers between you and the industry. We create a pressure-free working
+                    environment where you can decide your monthly and annual packages.
+                </p>
+                <div class="flex flex-wrap -mx-4">
+                    <div class="w-full md:w-1/2 px-4 mb-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <h3 class="text-2xl font-bold mb-2 text-teal-600">Our Mission</h3>
+                            <p class="text-gray-800">
+                                Our mission is to transform the working style of the industry. We have the
+                                skills,
+                                and
+                                we bring the jobs to you based on your resume. We create a workspace where
+                                talented
+                                individuals work together, regardless of their educational background. All you
+                                need
+                                are
+                                your skills.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 px-4 mb-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <h3 class="text-2xl font-bold mb-2 text-teal-600">Our Values</h3>
+                            <ul class="list-disc text-gray-800">
+                                <li class="mb-2">On-demand workforce for tech industries</li>
+                                <li class="mb-2">Data privacy is our priority</li>
+                                <li class="mb-2">Providing maintenance along with execution</li>
+                                <li class="mb-2">Creating a positive working environment</li>
+                                <li class="mb-2">No more job hunting</li>
+                                <li class="mb-2">Industry work based on your skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    </div>
+
+
+
+    <!--Service section-->
+
+    <section class="bg-white py-16 md:py-24">
+        <div id="service">
+            <div class="container px-4 mx-auto">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">Our Services</h2>
+                    <p class="text-gray-600 md:text-lg lg:text-xl mb-12">We offer a wide range of services to help
+                        you
+                        achieve your goals.</p>
+                </div>
+                <div class="max-w-5xl mx-auto flex flex-wrap justify-center items-start">
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/19.jpg" alt="Service 1">
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <span
+                                        class="bg-teal-500 text-white rounded-full py-2 px-4 text-xs font-bold uppercase tracking-wide">Best</span>
+                                </div>
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 1
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">We offers on demand work facility and
+                                    urgent
+                                    workforce requirement, reduce the hiring cost 3-4 times </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/7.jpg" alt="Service 2">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 2
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Get maintainence services of work from our
+                                    testing team with ontime execution</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/5.webp" alt="Service 3">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 3
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Just do one click and get in touch with
+                                    industry exposure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/17.jpg" alt="Service 4">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 4
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Enhance your skill by skill weekly contest
+                                    and
+                                    get opportunity to directly hired </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/moneyimg.webp" alt="Service ">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 5
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Create your income according to you be your
+                                    own
+                                    boss decide how much you want to work </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/10.jpg" alt="Service 6">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 6
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Offer research opportunity at
+                                    industries,institutions labs,incubation excess</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/18.jpg" alt="Service 7">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 7
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">We all are together ,we give rating to your
+                                    layoff employee,so they can start earning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/badges.webp" alt="Service 8">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 8
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Get rating badges ,Perks,and Certifiaction
+                                    in
+                                    association with company to enhance your profile</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3 mb-8 px-4">
+                        <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                            <div class="relative">
+                                <img class="w-full h-64 object-cover" src="img/wrk.jpg" alt="Service 9">
+                            </div>
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 mb-2">Service 9
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Workstation access,only need skill and get
+                                    opportunities to earn more, do work as much as you want, hustle free environment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact US section-->
+
+    <section class="bg-white py-16 md:py-24">
+        <div id="contact">
+            <div class="container mx-auto px-4">
+                <div class="max-w-xl mx-auto mb-8">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-center">Contact Us
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-8 text-center">Have questions or need help? We’d love to hear
+                        from you! Fill out the form below and we’ll get back to you as soon as possible.</p>
+                </div>
+                <div class="flex flex-wrap -mx-4">
+                    <div class="w-full lg:w-1/2 px-4 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6 h-full">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+                            <iframe src="https://forms.gle/zLxF1B3YXxMd4hhr8" width="600" height="800" frameborder="0"
+                                marginheight="0" marginwidth="0">Loading…</iframe>
+
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 px-4 mb-8">
+                        <div class="bg-white rounded-lg shadow p-6 h-full">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Visit Us</h3>
+                            <p class="text-gray-700 mb-4">IIITD <br> Okhla ,New delhi , State Zip-110020</p>
+                            <p class="text-gray-700 mb-4">Phone: 9354413829<br>Email:wyrcanforce@gmail.com</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
+                            <p class="text-gray-700">EveryDay <br>We are available 24/7 to make event more enjoyable
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!--Footer Section-->
+
+    <footer class="bg-gray-900 pt-16 pb-8 md:pt-20 md:pb-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-4">Wyrcanforce</h3>
+                    <p class="text-gray-400 leading-loose">Wyrcanforce is a platform that aims to revolutionize
+                        outsourcing in the technology industry. We provide students, undergraduates, graduates,
+                        and
+                        postgraduates with industry exposure. We believe there should be no barriers between you
+                        and the
+                        industry. We create a pressure-free working environment where you can decide your
+                        monthly and
+                        annual packages.</p>
+                </div>
+                <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="list-reset">
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#home">Home</a></li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#about">About Us</a>
+                        </li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#service">Services</a>
+                        </li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#contact">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <p class="text-gray-400 leading-loose mb-2">IIITD</p>
+                    <p class="text-gray-400 leading-loose mb-2">Okhala,New Delhi State Zip-110020</p>
+                    <p class="text-gray-400 leading-loose mb-2">Phone: 9354413829</p>
+                    <p class="text-gray-400 leading-loose">Email:wyrcanforce@gmail.com</p>
+                </div>
+                <div class="w-full lg:w-1/4">
+                    <h3 class="text-xl font-bold text-white mb-4">Follow Us</h3>
+                    <ul class="list-reset">
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#"><i
+                                    class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#"><i
+                                    class="fab fa-twitter"></i> Twitter</a></li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#"><i
+                                    class="fab fa-instagram"></i> Instagram</a></li>
+                        <li class="mb-2"><a class="text-gray-400 hover:text-white" href="#"><i
+                                    class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-8">
+            <div class="flex flex-wrap items-center justify-between">
+                <div class="w-full lg:w-auto mb-4 lg:mb-0">
+                    <p class="text-gray-400">© 2023 Company Name. All rights reserved.</p>
+                </div>
+                <div class="w-full lg:w-auto">
+                    <ul class="list-reset flex justify-center lg:justify-end">
+                        <li class="mr-4"><a class="text-gray-400 hover:text-white" href="#">Terms of Service</a>
+                        </li>
+                        <li><a class="text-gray-400 hover:text-white" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var slides = document.getElementsByClassName( "mySlides" );
+            for ( var i = 0; i < slides.length; i++ ) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if ( slideIndex > slides.length ) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout( showSlides, 10000 ); // Change slide every 10 seconds (10000 milliseconds)
+        }
+    </script>
+    <script>
+        // List of headlines
+        const headlines = [
+            "No need to hunt for jobs, jobs come to you.",
+            "Set your monthly, yearly income by your own.",
+            "Be your own boss, work as much as you want.",
+            "Work from your comfort zone.",
+            "No more exams, resume is sufficient now.",
+            "Be a top rater and get hired by your dream company.",
+            "On-demand workforce at scale.",
+            "Focus on your company's primary goals.",
+            "Get maintenance facility from us."
+        ];
+
+        // Function to cycle through headlines
+        function cycleHeadlines() {
+            const headlineElement = document.getElementById( "headline" );
+            let index = 0;
+
+            function updateHeadline() {
+                headlineElement.textContent = headlines[index];
+                index = ( index + 1 ) % headlines.length;
+            }
+
+            updateHeadline();
+            setInterval( updateHeadline, 5000 ); // Change headline every 5 seconds
+        }
+
+        // Start cycling headlines
+        cycleHeadlines();
+    </script>
+</body>
+
+</html>
